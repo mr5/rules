@@ -1,6 +1,7 @@
 const Fastify = require('fastify')
 const axios = require('axios')
 const yaml = require('js-yaml')
+const {JSON_SCHEMA} = require("js-yaml");
 const fastify = Fastify({
     logger: true
 })
@@ -52,7 +53,7 @@ fastify.get('/clash', async (request, reply) => {
         const matched = rule.split(',')
         return [matched[1], matched[2]]
     })), null, 8).split('\n')
-    ruleSetStringArr[ruleSetStringArr.length - 1] = `    ${ruleSetStringArr[ruleSetStringArr.length - 1]}`
+    ruleSetStringArr[ruleSetStringArr.length - 1] = `   ${ruleSetStringArr[ruleSetStringArr.length - 1]}`
     sourceJson.script.code = `
 def main(ctx, metadata):
     ruleset_action = ${ruleSetStringArr.join('\n')}
@@ -87,12 +88,20 @@ def main(ctx, metadata):
     ctx.log('[Script] FINAL')
     return "Others"
     `
-    reply.send(yaml.dump(sourceJson))
+    // reply.send(sourceJson)
+    if (sourceRet.headers['profile-update-interval']) {
+        reply.header('profile-update-interval', sourceRet.headers['profile-update-interval'])
+    }
+    if (sourceRet.headers['subscription-userinfo']) {
+        reply.header('subscription-userinfo', sourceRet.headers['subscription-userinfo'])
+    }
+
+    reply.send('---\n' + yaml.dump(sourceJson))
 })
 
 
 // Run the server!
-fastify.listen(process.env.PORT || 80, '0.0.0.0', (err, address) => {
+fastify.listen(process.env.PORT || 3000, '0.0.0.0', (err, address) => {
     if (err) throw err
     // Server is now listening on ${address}
 })
