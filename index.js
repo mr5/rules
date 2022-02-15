@@ -39,7 +39,10 @@ fastify.get('/clash', async (request, reply) => {
     const autoProxyGroupNames = mixinJson['proxy-groups']?.filter(group => group.type === 'url-test').map(group => group.name) ?? []
 
     if (autoProxyGroupNames.length > 0) {
-        sourceJson['proxy-groups'].filter(group => group.type === 'select').forEach((group, index) => {
+        sourceJson['proxy-groups'].forEach((group, index) => {
+            if (group.type !== 'select') {
+                return
+            }
             sourceJson['proxy-groups'][index].proxies.push(...autoProxyGroupNames)
         })
     }
