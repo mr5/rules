@@ -1,6 +1,5 @@
 payload:
   # > crypto
-  - PROCESS-NAME,crypto
   - DOMAIN-SUFFIX,crypto.com
   - DOMAIN-SUFFIX,crypto.net
   - DOMAIN-SUFFIX,crypto.org
