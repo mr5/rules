@@ -1,5 +1,5 @@
 payload:
-  # > crypto
+  # > Crypto
   - DOMAIN-SUFFIX,crypto.com
   - DOMAIN-SUFFIX,crypto.net
   - DOMAIN-SUFFIX,crypto.org
@@ -7,11 +7,11 @@ payload:
   - DOMAIN-SUFFIX,ftx.com
   - DOMAIN-SUFFIX,ftx.tech
   - DOMAIN-SUFFIX,ftx.cool
+  - DOMAIN-SUFFIX,ftx.us
   - DOMAIN-SUFFIX,bybit.com
   - DOMAIN-SUFFIX,binance.com
   - DOMAIN-SUFFIX,bitfinex.com
   - DOMAIN-SUFFIX,okex.com
-#  - DOMAIN-SUFFIX,huobi.pro
   - DOMAIN-SUFFIX,bitmex.com
   - DOMAIN-SUFFIX,bithumb.com
   - DOMAIN-SUFFIX,bitflyer.com
