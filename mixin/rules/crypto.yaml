@@ -6,6 +6,8 @@ payload:
   - DOMAIN-SUFFIX,crypto.org
   - DOMAIN-SUFFIX,coinlist.co
   - DOMAIN-SUFFIX,ftx.com
+  - DOMAIN-SUFFIX,ftx.tech
+  - DOMAIN-SUFFIX,ftx.cool
   - DOMAIN-SUFFIX,bybit.com
   - DOMAIN-SUFFIX,binance.com
   - DOMAIN-SUFFIX,bitfinex.com
