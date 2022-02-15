@@ -1,0 +1,59 @@
+proxy-groups:
+- name: Crypto
+  type: select
+
+- name: Auto - 香港
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 香港 HC
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 日本
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 台湾
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 德国
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 新加坡
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 英国
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 韩国
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+- name: Auto - 美国
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "3600"
+
+rules:
+- RULE-SET,Crypto,Crypto
+
+rule-providers:
+  Crypto:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mr5/rules/master/mixin/rules/crypto.yaml
+    path: ./Rules/Crypto
+    interval: 86400

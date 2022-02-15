@@ -1,0 +1,21 @@
+payload:
+  # > crypto
+  - PROCESS-NAME,crypto
+  - DOMAIN-SUFFIX,crypto.com
+  - DOMAIN-SUFFIX,crypto.net
+  - DOMAIN-SUFFIX,crypto.org
+  - DOMAIN-SUFFIX,coinlist.co
+  - DOMAIN-SUFFIX,ftx.com
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,bitfinex.com
+  - DOMAIN-SUFFIX,okex.com
+#  - DOMAIN-SUFFIX,huobi.pro
+  - DOMAIN-SUFFIX,bitmex.com
+  - DOMAIN-SUFFIX,bithumb.com
+  - DOMAIN-SUFFIX,bitflyer.com
+  - DOMAIN-SUFFIX,bitstamp.com
+  - DOMAIN-SUFFIX,bittrex.com
+  - DOMAIN-SUFFIX,kraken.com
+  - DOMAIN-SUFFIX,hitbtc.com
+  - DOMAIN-SUFFIX,bitflyer.jp
