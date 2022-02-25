@@ -20,3 +20,5 @@ payload:
   - DOMAIN-SUFFIX,kraken.com
   - DOMAIN-SUFFIX,hitbtc.com
   - DOMAIN-SUFFIX,bitflyer.jp
+  - DOMAIN-SUFFIX,mexc.com
+  - DOMAIN-SUFFIX,gate.io
