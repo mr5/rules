@@ -54,6 +54,6 @@ rule-providers:
   Crypto:
     type: http
     behavior: classical
-    url: https://gitee.com/mr.5/rules/raw/master/mixin/rules/crypto.yaml
+    url: https://raw.githubusercontent.com/mr5/rules/master/mixin/rules/crypto.yaml
     path: ./Rules/Crypto
     interval: 86400
