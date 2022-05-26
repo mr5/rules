@@ -7,7 +7,7 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: "3600"
 
-- name: Auto - 香港 HC
+- name: Auto - 香港 AC
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: "3600"

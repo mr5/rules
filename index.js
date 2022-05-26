@@ -21,6 +21,7 @@ fastify.get('/clash', async (request, reply) => {
         mixinProxyNames.push(...mixinJson.proxies.map(proxy => proxy.name))
     }
     const sourceProxyNames = sourceJson.proxies.map(proxy => proxy.name)
+    const removedProxyGroups = []
     if (mixinJson['proxy-groups']) {
         for (const proxyGroup of mixinJson['proxy-groups']) {
             if (!proxyGroup.proxies) {
@@ -32,11 +33,22 @@ fastify.get('/clash', async (request, reply) => {
             } else {
                 proxyGroup.proxies.push(...sourceProxyNames)
             }
-
-            sourceJson['proxy-groups'].push(proxyGroup)
+            if (proxyGroup.proxies && proxyGroup.proxies.length > 0) {
+                sourceJson['proxy-groups'].push(proxyGroup)
+            } else {
+                removedProxyGroups.push(proxyGroup.name.trim());
+            }
         }
     }
-    const autoProxyGroupNames = mixinJson['proxy-groups']?.filter(group => group.type === 'url-test').map(group => group.name) ?? []
+    if (removedProxyGroups.length > 0) {
+        sourceJson['proxy-groups'] = sourceJson['proxy-groups'].map(proxyGroup => {
+            return {
+                ...proxyGroup,
+                proxies: proxyGroup.proxies.filter(proxy => !removedProxyGroups.includes(proxy.trim()))
+            }
+        })
+    }
+    const autoProxyGroupNames = mixinJson['proxy-groups']?.filter(group => group.type === 'url-test' && !removedProxyGroups.includes(group.name)).map(group => group.name) ?? []
 
     if (autoProxyGroupNames.length > 0) {
         sourceJson['proxy-groups'].forEach((group, index) => {
