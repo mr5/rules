@@ -48,7 +48,7 @@ proxy-groups:
   interval: "3600"
 
 rules:
-- RULE-SET,Crypto,Crypto
+- RULE-SET,Crypto_customized,Crypto_customized
 
 rule-providers:
   Crypto_customized:
