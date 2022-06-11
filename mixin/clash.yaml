@@ -1,5 +1,5 @@
 proxy-groups:
-- name: Crypto
+- name: Crypto_customized
   type: select
 
 - name: Auto - 香港
@@ -51,9 +51,9 @@ rules:
 - RULE-SET,Crypto,Crypto
 
 rule-providers:
-  Crypto:
+  Crypto_customized:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/mr5/rules/master/mixin/rules/crypto.yaml
-    path: ./Rules/Crypto
+    path: ./Rules/Crypto_customized
     interval: 86400
